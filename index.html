@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBANFLIX | CINEPHILE'S HAVEN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        async function getData() {
+            let token = window.localStorage.getItem("access-token")
+            let username = window.sessionStorage.getItem("user")
+            console.log(username)
+            let response = await fetch("https://web-01.ayotech-py.tech/letsquiz_api/getdata", {
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                    'Access-Control-Allow-Origin': 'https://127.0.0.1:8000',
+                    'user': username,
+                }
+            });
+            let data = await response.json()
+            if (response.status === 200) {
+                user = data.user
+                window.sessionStorage.setItem("user", user)
+                document.getElementById("logged_in_user").innerHTML = `WELCOME BACK ${user.toUpperCase()}`
+                let remove = document.getElementsByClassName("list");
+                for (let a = 0; a < remove.length - 1; a++) {
+                    remove[a].style.display = 'none'
+                }
+                let auth = document.getElementById("auth");
+                auth.innerHTML = 'Dashboard';
+                document.getElementById("auth-src").href = "./assets/html/dashboard.html";
+            }
+        }
+        
+        getData();
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h3 class="letsquiz"><span>Lets</span>Quiz</h3>
+            </div>
+            <div class="navigation">
+                <ul class="nav_list">
+                    <a class="no-list" href="./assets/html/join_quiz_login.html"><li class="list">Join a Quiz</li></a>
+                    <a class="no-list" href="./assets/html/login.html"><li class="list">Organize a Quiz</li></a>
+                    <a href="./assets/html/login.html"><li class="list"><span>Log in</span></li></a>
+                    <a href="./assets/html/sign_up.html"><li class="list"><span>Sign Up</span></li></a>
+                    <li class="list" id="logged_in_user"></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container-brief">
+            <div class="intro">
+                <p class="text-1">ALL-IN-ONE QUIZ & CBT APP </p>
+                <p class="text-2"><strong>Challenge your knowledge with LetsQuiz</strong></p>
+                <p class="text-3">Unleash the power of knowledge-sharing with our all-in-one <span>quiz and CBT app,</span> designed to challenge, educate, and connect people across the globe</p>
+            </div>
+            <div class="button">
+                <a id="auth-src" href="./assets/html/join_quiz_login.html"><span><button class="btn-01" id="auth">Join a Quiz</button></span></a> 
+            </div>
+        </section>
+        <section class="about-details">
+            <div class="h1-text">
+                <h1>About LetsQuiz</h1>
+            </div>
+            <div class="about-section">
+                <div class="about">
+                    <p class="about-text">Welcome to our all-in-one quiz and CBT app! Our app is designed to bring people together through knowledge-sharing and education. With our joint quiz feature, you can organize a quiz competition among a set of people and see who comes out on top. And if you prefer to take quizzes on your own, our solo quiz feature lets you test your knowledge at your own pace. But that's not all! Our app also has a proctored CBT test feature, which allows you to schedule and take exams under secure and controlled conditions. Whether you're a student, a teacher, or just someone who loves to learn, our app has something for you. So why wait? Click the button below to start challenging yourself to new heights of knowledge and skill!</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://cdnimages.myclassboard.com/Website-2022/LMS/OnlineExams/Online-exam-768x728.svg" alt="aboout-image" srcset="">
+                </div>
+            </div>
+        </section>
+        <section class="organizeQuiz">
+            <div class="h1-text">
+                <h1>Preparing for JAMB?</h1>
+                <h3 class="about-text">LetsQuiz JAMB Mock Tests can help you prevail in your forthcoming examination</h3>
+                <p class="about-text">Think you know your stuff? Prove it! Take the exam now!</p>
+            </div>
+            <form>
+                <h3>Select Subject & Year</h3>
+                <h5 id="response"></h5>
+                <select class="form2" name="subject" id="subject">
+                    <option value="English">English language</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Commerce">Commerce</option>
+                    <option value="Accounting">Accounting</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="literature">English literature</option>
+                    <option value="Government">Government</option>
+                    <option value="Christain">Christain Religious Knowledge</option>
+                    <option value="Geography">Geography</option>
+                    <option value="Economics">Economics</option>
+                    <option value="Islamic">Islamic Religious Knowledge</option>
+                    <option value="Civic">Civic Education</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Current">Current Affairs</option>
+                    <option value="History">History</option>
+                </select>
+                <br>
+                <select class="form2" name="subject" id="year">
+                </select>
+                <div class="jamb_button">
+                    <button class="btn-01" id="jamb_test" type="button">Start Test</button> 
+                </div> 
+            </form>
+        </section>
+        <section class="quiz-section">
+            <div class="h1-text">
+                <h1>Challenge Yourself, Take the Quiz</h1>
+                <h3 class="about-text">Challenge your knowledge by taking a 2minutes solo quiz.</h3>
+            </div>
+            <div class="quiz">
+                <div class="quiz-details">
+                    <h3 class="quiz-subject">Arts and Literature</h3>
+                    <div class="radio">
+                        <h5>2 minutes</h5>
+                        <div class="radio-btn">
+                            <input type="radio" id="easy" name="fav_language" value="Easy">
+                            <label for="easy">Easy</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="medium" name="fav_language" value="Medium">
+                            <label for="Medium">Medium</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="hard" name="fav_language" value="Hard">
+                            <label for="Hard">Hard</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz-details">
+                    <h3 class="quiz-subject">General Knowledge</h3>
+                    <div class="radio">
+                        <h5>2 minutes</h5>
+                        <div class="radio-btn">
+                            <input type="radio" id="Easy" name="fav_language" value="Easy">
+                            <label for="easy">Easy</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Medium" name="fav_language" value="Medium">
+                            <label for="Medium">Medium</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Hard" name="fav_language" value="Hard">
+                            <label for="Hard">Hard</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-button">
+                    <a href="./assets/html/take_quiz.html"><button id="General_Knowledge" onclick="buttonClick(this)">Take Quiz</button></a>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz-details">
+                    <h3 class="quiz-subject">Geography</h3>
+                    <div class="radio">
+                        <h5>2 minutes</h5>
+                        <div class="radio-btn">
+                            <input type="radio" id="Easy" name="fav_language" value="Easy">
+                            <label for="easy">Easy</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Medium" name="fav_language" value="Medium">
+                            <label for="Medium">Medium</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Hard" name="fav_language" value="Hard">
+                            <label for="Hard">Hard</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-button">
+                    <a href="./assets/html/take_quiz.html"><button id="Geography" onclick="buttonClick(this)">Take Quiz</button></a>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz-details">
+                    <h3 class="quiz-subject">History</h3>
+                    <div class="radio">
+                        <h5>2 minutes</h5>
+                        <div class="radio-btn">
+                            <input type="radio" id="Easy" name="fav_language" value="Easy">
+                            <label for="easy">Easy</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Medium" name="fav_language" value="Medium">
+                            <label for="Medium">Medium</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Hard" name="fav_language" value="Hard">
+                            <label for="Hard">Hard</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-button">
+                    <a href="./assets/html/take_quiz.html"><button id="History" onclick="buttonClick(this)">Take Quiz</button></a>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz-details">
+                    <h3 class="quiz-subject">Music</h3>
+                    <div class="radio">
+                        <h5>2 minutes</h5>
+                        <div class="radio-btn">
+                            <input type="radio" id="Easy" name="fav_language" value="Easy">
+                            <label for="easy">Easy</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Medium" name="fav_language" value="Medium">
+                            <label for="Medium">Medium</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Hard" name="fav_language" value="Hard">
+                            <label for="Hard">Hard</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-button">
+                    <a href="./assets/html/take_quiz.html"><button id="Music" onclick="buttonClick(this)">Take Quiz</button></a>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz-details">
+                    <h3 class="quiz-subject">Science</h3>
+                    <div class="radio">
+                        <h5>2 minutes</h5>
+                        <div class="radio-btn">
+                            <input type="radio" id="Easy" name="fav_language" value="Easy">
+                            <label for="easy">Easy</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Medium" name="fav_language" value="Medium">
+                            <label for="Medium">Medium</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Hard" name="fav_language" value="Hard">
+                            <label for="Hard">Hard</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-button">
+                    <a href="./assets/html/take_quiz.html"><button id="Science" onclick="buttonClick(this)">Take Quiz</button></a>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz-details">
+                    <h3 class="quiz-subject">Society and Culture</h3>
+                    <div class="radio">
+                        <h5>2 minutes</h5>
+                        <div class="radio-btn">
+                            <input type="radio" id="Easy" name="fav_language" value="Easy">
+                            <label for="easy">Easy</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Medium" name="fav_language" value="Medium">
+                            <label for="Medium">Medium</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Hard" name="fav_language" value="Hard">
+                            <label for="Hard">Hard</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-button">
+                    <a href="./assets/html/take_quiz.html"><button id="Society_and_Culture" onclick="buttonClick(this)">Take Quiz</button></a>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz-details">
+                    <h3 class="quiz-subject">Sport and leisure</h3>
+                    <div class="radio">
+                        <h5>2 minutes</h5>
+                        <div class="radio-btn">
+                            <input type="radio" id="Easy" name="fav_language" value="Easy">
+                            <label for="easy">Easy</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Medium" name="fav_language" value="Medium">
+                            <label for="Medium">Medium</label><br>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" id="Hard" name="fav_language" value="Hard">
+                            <label for="Hard">Hard</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-button">
+                    <a href="./assets/html/take_quiz.html"><button id="Sport_and_leisure" onclick="buttonClick(this)">Take Quiz</button></a>
+                </div>
+            </div>
+        </section>
+        <section class="about-details">
+            <div class="h1-text">
+                <h1>About the Developer</h1>
+            </div>
+            <div class="about-section">
+                <div class="about">
+                    <p class="about-text">My name is Ajao Malik Ayomide, I'm a software engineer with expertise in programming languages, algorithms, and software design patterns. I excel at solving complex problems and take pride in writing clean, efficient, and maintainable code. I am dedicated to continuous learning and improvement, always staying up-to-date with the latest industry trends and technologies. My commitment to excellence makes me a valuable asset to any software engineering team, You can reach me out via the links below</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://liveassets.ca/wp-content/uploads/2022/01/523-5237005_developing-full-stack-developer-png-transparent-png.png" alt="aboout-image" srcset="">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="h1-text">
+                <h1>Contact Us</h1>
+            </div>
+            <p>Do you want to communicate with us? feel free to use one of the links</p>
+            <div class="handles">
+                <span><a href="https://www.linkedin.com/in/ajao-malik-7150b0204"></a><i class="fa fa-linkedin-square" style="font-size:24px; color:white"> linkedln</i></a></span>
+                <span><a href="https://twitter.com/AjaoMaleek?s=08"><i class="fa fa-twitter" style="font-size:24px; color:white"> Twitter</i></a></span>
+                <span><a href="https://github.com/ayotech-py"><i class="fa fa-github" style="font-size:24px; color:white"> Github</i></a></span>
+            </div>
+            <div class="handles">
+                <span><a href="https://wa.me/qr/FZ2N5XWTUGQIK1"><i class="fa fa-whatsapp" style="font-size:24px; color:white"> Whatsapp</i></a></span>
+                <span><a href="https://www.facebook.com/maleek.ajao.14"><i class="fa fa-facebook-f" style="font-size:24px; color:white"> Facebook</i></a></span>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
