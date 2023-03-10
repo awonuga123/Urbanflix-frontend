@@ -6,9 +6,9 @@ function buttonClick(btn_id) {
 
 async function getDataa() {
     document.getElementById("response").innerHTML = "please wait..."; 
-    let year = document.getElementById("year").value;
-    let subject = document.getElementById("subject").value;
-    window.sessionStorage.setItem("subject", subject)
+    let year = document.getElementById("Year").value;
+    let subject = document.getElementById("Genre").value;
+    window.sessionStorage.setItem("genre", genre)
     let response = await fetch(`https://questions.aloc.com.ng/api/v2/q/40?subject=${subject}&year=${year}&type=utme`, {
         headers: {
             'Accept': 'application/json',
