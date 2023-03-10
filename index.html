@@ -41,7 +41,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h3 class="letsquiz"><span>Lets</span>Quiz</h3>
+                <h3 class="letsquiz"><span>Let</span>Store</h3>
             </div>
             <div class="navigation">
                 <ul class="nav_list">
@@ -61,7 +61,7 @@
                 <p class="text-3">Find and save your favorite movies and TV shows with Urbanflix people across the globe</p>
             </div>
             <div class="button">
-                <a id="auth-src" href="./assets/html/search.html"><span><button class="btn-01" id="auth">Join a Quiz</button></span></a> 
+                <a id="auth-src" href="./assets/html/search.html"><span><button class="btn-01" id="auth">Search</button></span></a> 
             </div>
         </section>
         <section class="about-details">
@@ -70,23 +70,38 @@
             </div>
             <div class="about-section">
                 <div class="about">
-                    <p class="about-text">Welcome to our all-in-one quiz and CBT app! Our app is designed to bring people together through knowledge-sharing and education. With our joint quiz feature, you can organize a quiz competition among a set of people and see who comes out on top. And if you prefer to take quizzes on your own, our solo quiz feature lets you test your knowledge at your own pace. But that's not all! Our app also has a proctored CBT test feature, which allows you to schedule and take exams under secure and controlled conditions. Whether you're a student, a teacher, or just someone who loves to learn, our app has something for you. So why wait? Click the button below to start challenging yourself to new heights of knowledge and skill!</p>
+                    <p class="about-text">Thank you for using Urbanflix, your go-to app for discovering and organizing your favorite movies and TV shows. With Urbanflix, you can search for new movies and TV shows to watch, add them to your watchlist, and keep track of what you've watched.
+
+                        To get started, simply sign up and start browsing our library of popular movies and TV shows. You can search by title, genre, or even by actor or director. Once you find something you like, simply click the "Add to Watchlist" button to save it to your personal watchlist.
+                        
+                        You can access your watchlist at any time to see what you've added, mark items as watched, or remove them from your list. And with our recommendation engine, we'll suggest new titles based on your viewing history and preferences, so you'll never run out of things to watch.
+                        
+                        Thank you for choosing Urbanflix as your movie and TV show companion. We hope you enjoy using our app and discovering your next favorite show.
+                        
+                        Best regards,
+                        The Urbanflix Team
+                        
+                        
+                        
+                        
+                        
+                        !</p>
                 </div>
                 <div class="about-image">
                     <img src="https://cdnimages.myclassboard.com/Website-2022/LMS/OnlineExams/Online-exam-768x728.svg" alt="aboout-image" srcset="">
                 </div>
             </div>
         </section>
-        <section class="organizeQuiz">
+        <section class="organizeMpvies">
             <div class="h1-text">
-                <h1>Preparing for JAMB?</h1>
-                <h3 class="about-text">LetsQuiz JAMB Mock Tests can help you prevail in your forthcoming examination</h3>
-                <p class="about-text">Think you know your stuff? Prove it! Take the exam now!</p>
+                <h1>Searching for Movies?</h1>
+                <h3 class="about-text">Urbanflix can help your organize and store your movie recommendations</h3>
+                <p class="about-text">Think you know your stuff? Prove it! Search through and store now!</p>
             </div>
             <form>
-                <h3>Select Year & Year</h3>
+                <h3>Select Genre & Year</h3>
                 <h5 id="response"></h5>
-                <select class="form2" name="Genre" id="subject">
+                <select class="form2" name="Genre" id="genre">
                     <option value="Drama">Drama</option>
                     <option value="Horror">Horror</option>
                     <option value="Action">Action</option>
@@ -104,202 +119,35 @@
                     <option value="Music">Music</option>
                     <option value="Satire">Satire</option>
                     <option value="Fiction">Fiction</option>
+                    <option value="Others">Others</option>
                 </select>
                 <br>
                 <select class="form2" name="subject" id="year">
                 </select>
                 <div class="jamb_button">
-                    <button class="btn-01" id="jamb_test" type="button">Start Test</button> 
+                    <button class="btn-01" id="jamb_test" type="button">Search</button> 
                 </div> 
             </form>
         </section>
-        <section class="quiz-section">
-            <div class="h1-text">
-                <h1>Challenge Yourself, Take the Quiz</h1>
-                <h3 class="about-text">Challenge your knowledge by taking a 2minutes solo quiz.</h3>
-            </div>
-            <div class="quiz">
-                <div class="quiz-details">
-                    <h3 class="quiz-subject">Arts and Literature</h3>
-                    <div class="radio">
-                        <h5>2 minutes</h5>
-                        <div class="radio-btn">
-                            <input type="radio" id="easy" name="fav_language" value="Easy">
-                            <label for="easy">Easy</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="medium" name="fav_language" value="Medium">
-                            <label for="Medium">Medium</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="hard" name="fav_language" value="Hard">
-                            <label for="Hard">Hard</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="quiz">
-                <div class="quiz-details">
-                    <h3 class="quiz-subject">General Knowledge</h3>
-                    <div class="radio">
-                        <h5>2 minutes</h5>
-                        <div class="radio-btn">
-                            <input type="radio" id="Easy" name="fav_language" value="Easy">
-                            <label for="easy">Easy</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Medium" name="fav_language" value="Medium">
-                            <label for="Medium">Medium</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Hard" name="fav_language" value="Hard">
-                            <label for="Hard">Hard</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz-button">
-                    <a href="./assets/html/take_quiz.html"><button id="General_Knowledge" onclick="buttonClick(this)">Take Quiz</button></a>
-                </div>
-            </div>
-            <div class="quiz">
-                <div class="quiz-details">
-                    <h3 class="quiz-subject">Geography</h3>
-                    <div class="radio">
-                        <h5>2 minutes</h5>
-                        <div class="radio-btn">
-                            <input type="radio" id="Easy" name="fav_language" value="Easy">
-                            <label for="easy">Easy</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Medium" name="fav_language" value="Medium">
-                            <label for="Medium">Medium</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Hard" name="fav_language" value="Hard">
-                            <label for="Hard">Hard</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz-button">
-                    <a href="./assets/html/take_quiz.html"><button id="Geography" onclick="buttonClick(this)">Take Quiz</button></a>
-                </div>
-            </div>
-            <div class="quiz">
-                <div class="quiz-details">
-                    <h3 class="quiz-subject">History</h3>
-                    <div class="radio">
-                        <h5>2 minutes</h5>
-                        <div class="radio-btn">
-                            <input type="radio" id="Easy" name="fav_language" value="Easy">
-                            <label for="easy">Easy</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Medium" name="fav_language" value="Medium">
-                            <label for="Medium">Medium</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Hard" name="fav_language" value="Hard">
-                            <label for="Hard">Hard</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz-button">
-                    <a href="./assets/html/take_quiz.html"><button id="History" onclick="buttonClick(this)">Take Quiz</button></a>
-                </div>
-            </div>
-            <div class="quiz">
-                <div class="quiz-details">
-                    <h3 class="quiz-subject">Music</h3>
-                    <div class="radio">
-                        <h5>2 minutes</h5>
-                        <div class="radio-btn">
-                            <input type="radio" id="Easy" name="fav_language" value="Easy">
-                            <label for="easy">Easy</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Medium" name="fav_language" value="Medium">
-                            <label for="Medium">Medium</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Hard" name="fav_language" value="Hard">
-                            <label for="Hard">Hard</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz-button">
-                    <a href="./assets/html/take_quiz.html"><button id="Music" onclick="buttonClick(this)">Take Quiz</button></a>
-                </div>
-            </div>
-            <div class="quiz">
-                <div class="quiz-details">
-                    <h3 class="quiz-subject">Science</h3>
-                    <div class="radio">
-                        <h5>2 minutes</h5>
-                        <div class="radio-btn">
-                            <input type="radio" id="Easy" name="fav_language" value="Easy">
-                            <label for="easy">Easy</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Medium" name="fav_language" value="Medium">
-                            <label for="Medium">Medium</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Hard" name="fav_language" value="Hard">
-                            <label for="Hard">Hard</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz-button">
-                    <a href="./assets/html/take_quiz.html"><button id="Science" onclick="buttonClick(this)">Take Quiz</button></a>
-                </div>
-            </div>
-            <div class="quiz">
-                <div class="quiz-details">
-                    <h3 class="quiz-subject">Society and Culture</h3>
-                    <div class="radio">
-                        <h5>2 minutes</h5>
-                        <div class="radio-btn">
-                            <input type="radio" id="Easy" name="fav_language" value="Easy">
-                            <label for="easy">Easy</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Medium" name="fav_language" value="Medium">
-                            <label for="Medium">Medium</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Hard" name="fav_language" value="Hard">
-                            <label for="Hard">Hard</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz-button">
-                    <a href="./assets/html/take_quiz.html"><button id="Society_and_Culture" onclick="buttonClick(this)">Take Quiz</button></a>
-                </div>
-            </div>
-            <div class="quiz">
-                <div class="quiz-details">
-                    <h3 class="quiz-subject">Sport and leisure</h3>
-                    <div class="radio">
-                        <h5>2 minutes</h5>
-                        <div class="radio-btn">
-                            <input type="radio" id="Easy" name="fav_language" value="Easy">
-                            <label for="easy">Easy</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Medium" name="fav_language" value="Medium">
-                            <label for="Medium">Medium</label><br>
-                        </div>
-                        <div class="radio-btn">
-                            <input type="radio" id="Hard" name="fav_language" value="Hard">
-                            <label for="Hard">Hard</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz-button">
-                    <a href="./assets/html/take_quiz.html"><button id="Sport_and_leisure" onclick="buttonClick(this)">Take Quiz</button></a>
-                </div>
-            </div>
-        </section>
+        <h2>Popular Movies</h2>
+        <div class="movie-list">
+          <div class="movie">
+            <img src="https://via.placeholder.com/150x225.png?text=Movie+1" alt="Movie 1">
+            <h3>Movie 1</h3>
+            <button>Add to Watchlist</button>
+          </div>
+          <div class="movie">
+            <img src="https://via.placeholder.com/150x225.png?text=Movie+2" alt="Movie 2">
+            <h3>Movie 2</h3>
+            <button>Add to Watchlist</button>
+          </div>
+          <div class="movie">
+            <img src="https://via.placeholder.com/150x225.png?text=Movie+3" alt="Movie 3">
+            <h3>Movie 3</h3>
+            <button>Add to Watchlist</button>
+          </div>
+        </div>
+      </section>
         <section class="about-details">
             <div class="h1-text">
                 <h1>About the Developer</h1>
@@ -321,12 +169,12 @@
             </div>
             <p>Do you want to communicate with us? feel free to use one of the links</p>
             <div class="handles">
-                <span><a href="https://www.linkedin.com/in/ajao-malik-7150b0204"></a><i class="fa fa-linkedin-square" style="font-size:24px; color:white"> linkedln</i></a></span>
+                <span><a href="https://www.linkedin.com/ismail-awonuga-4987b223a"></a><i class="fa fa-linkedin-square" style="font-size:24px; color:white"> linkedln</i></a></span>
                 <span><a href="https://twitter.com/awonugaismail?s=08"><i class="fa fa-twitter" style="font-size:24px; color:white"> Twitter</i></a></span>
                 <span><a href="https://github.com/awonuga123"><i class="fa fa-github" style="font-size:24px; color:white"> Github</i></a></span>
             </div>
             <div class="handles">
-                <span><a href="https://wa.me/qr/FZ2N5XWTUGQIK1"><i class="fa fa-whatsapp" style="font-size:24px; color:white"> Whatsapp</i></a></span>
+                <span><a href="https://wa.me/qr/+2347056479075"><i class="fa fa-whatsapp" style="font-size:24px; color:white"> Whatsapp</i></a></span>
                 <span><a href="https://www.facebook.com/adeyemi ismail awonuga"><i class="fa fa-facebook-f" style="font-size:24px; color:white"> Facebook</i></a></span>
             </div>
         </div>

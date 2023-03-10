@@ -11,7 +11,7 @@
         async function getData() {
             let token = window.localStorage.getItem("access-token")
             let username = window.sessionStorage.getItem("user")
-            let response = await fetch("https://web-01.ayotech-py.tech/letsquiz_api/getdata", {
+            let response = await fetch("https://web-01.awonuga.tech/Urbanflix_api/getdata", {
                 headers: {
                     'Authorization': 'Bearer ' + token,
                     'user': username,
@@ -157,14 +157,14 @@
         </main>
         <aside>
             <div class="dashboard-title">
-                <h3>ORGANISE QUIZ</h3>
+                <h3>Urbanflix</h3>
             </div>
-            <section class="organizeQuiz">
+            <section class="Urbanflix">
                 <form>
                     <h3>Provide details</h3>
                     <h5 id="response"></h5> 
                     <div class="form">
-                        <input type="text" id="quiz-title" name="quiz-title" placeholder="quiz title">
+                        <input type="text" id="movie-title" name="movie-title" placeholder="movie title">
                     </div>
                     <select class="form2" name="subject" id="subject">
                         <option value="Arts and Literature">Arts and Literature</option>
@@ -195,10 +195,10 @@
                                 <p class="details" id="quiz-subject">Quiz Subject</p>
                             </div>
                             <div class="radio-btn" style="margin-bottom: 10px;">
-                                <p class="details" id="quiz-id">Quiz ID</p>
+                                <p class="details" id="movie-id">movie-id</p>
                             </div>
                             <div class="radio-btn" style="margin-bottom: 10px;">
-                                <p class="details" id="quiz-date">Date Created</p>
+                                <p class="details" id="watchlist-date">Date Created</p>
                             </div>
                         </div>
                     </div>
